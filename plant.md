@@ -29,16 +29,6 @@ vim
 
 ### 脚本学习
 
-node
-----
-
-[TODO](./TODO.md)
-
-### 模块
-
-#### sequelize
-
-
 ### 你所不知道的`javascript`的学习
 
 [文件地址](./javascript.md)
@@ -48,6 +38,15 @@ node
 [文件地址](./typescript.md)
 
 ### 标准库函数的使用
+
+[TODO](./TODO.md)
+
+node
+----
+
+[模块](./module.md)
+
+#### sequelize
 
 js-xlsx
 --------

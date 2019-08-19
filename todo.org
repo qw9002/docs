@@ -1,0 +1,416 @@
+ 使用作为前键使用，
+* 学习及内容总结篇
+** 语言特征
+  1.  变量定义
+  2.  算术运算
+  3.  for 循环语句，while 循环语句
+  4.  函数定义，函数调用
+  5.  递归
+  6.  静态类型系统
+  7.  类型推导
+  8.  lambda 函数
+  9.  面向对象
+  10.  垃圾回收
+  11.  指针算术
+  12.  goto 语句
+** 正则表达式学习
+*** 
+    . * + ? {n, m} () [] \d \w \1  | 
+** 终端下的bash、grep、awk、sed等等工具的学习
+*** 命令行
+**** 在命令行中键入命令时，
+     shell 会设法对任何元字符和空格进行转换，所以任何可能被转换的字符都必须使用引号括起来。
+**** 变量
+     set var=value. echo ${var} or $var. ${var[#%]pattern}
+*** bash script
+**** 变量
+     1. declare -a{array}, -i{integer}, -x{export var}, -r{readonly}
+*** grep egrep fgrep
+*** find
+*** awk
+    1. FS 来分辨分隔符号，OFS 默认把逗号替换输出为空格。 
+      awk -F'pattern' '{print $1, $3}' tables。
+    2. NF 代表元素个数，NR 代表行数
+*** sed
+** TODO vim 
+*** 基本操作 [1/7]
+    1. [X] 通过 vimtutor 学习基本操作 
+    2. [ ] 屏幕操作 C-f, C-b, C-d, C-u, C-e, C-y, zz使光标在中间, zt顶部, zb底部
+       [ctrl-w][hjklwqcox] 
+    3. [ ] 退出 :wq[a!], ZZ, :x
+    4. [ ] 普通模式进入插入模式
+       | 命令字符 | 所在模式 | 命令说明               |
+       | a        | normal | 插入光标后               |
+       | i        | normal | 插入光标前               |
+       | A        | normal | 插入行末                 |
+       | I        | normal | 插入本行第一个非空白字符 |
+       | c        | normal | 删除范围内字符并插入     |
+       | o        | normal | 本行下方插入一行         |
+       | O        | normal | 本行上方插入一行         |
+       | s        | normal | 删除光标后字符并插入     |
+       | S        | normal | 删除整行并在插入在行首   |
+       | C        | normal | 删除到行末并插入         |
+       |----------+--------+--------------------------|
+    5. [ ] 插入模式退出普通模式 C-[ Esc C-c
+    6. [ ] hjkl{左移，下移，上移，右移}
+    7. [ ] [g][#*d]{搜索光标下匹配的word}, fFtT, *#,
+        # + BEGIN_CENTER /# + END_CENTER
+       | 命令字符 | 作用范围   | 操作后模式 | 命令说明         |
+       |----------+------------+------------+------------------|
+       | y        | 根据motion | normal     | 复制前缀         |
+       | c        | 根据motion | insert     | 修改前缀         |
+       | d        | 根据motion | normal     | 删除前缀         |
+       | p        | 字符或行   | normal     | 粘贴复制         |
+       | x        | 字符       | normal     | 删除光标后的字符 |
+       | X        | 字符       | normal     | 删除光标前的字符 |
+       | s        | 字符       | insert     | 删除光标后到字符 |
+       | S        | 行         | insert     | 删除整行         |
+       | C        | 行         | insert     | 删除到行末       |
+       | D        | 行         | normal     | 删除到行末       |
+       | Y        | 行         | normal     | 复制当前行       |
+       |----------+------------+------------+------------------|
+*** 普通模式基本功能的详细了解 [0/4]
+    1. [ ] 操作前缀 (operator)
+       1. y{yank} c{change} d{delete}
+       2. v{select visual} c-v{block visual} V{line visual}
+       3. < > =   {缩进}
+       4. gU gu g~ g?
+       5. !{filter}
+       6. ys cs ds v_S 
+       7. g@{operatorfun}
+    2. [ ] 移动 (motion)
+       1. 字符 单词 行 句子 段落 
+       2. 标点对 括号对 标签对
+       3. 参数列表 缓冲区 窗口区（可视区） 文本
+       4. 正则模式
+       5. hjkl [g]0_+-$
+       6. %（标签对matchit.vim，括号对，c宏条件处理 ）;, Nn
+       7. wb WB ege EgE  
+       8. [ia][`'">){b}]}{B}t{标签}wW{单词}s{句子}p{段落}e{整个文件}(?/){正则匹配}]{数据块范围}
+    3. [ ] 正常模式操作
+       1. ([operator][num] | [num][operator])[motion]
+       2. "." 重复命令操作。
+    4. [ ] 宏操作
+       1. 操作开始-> q("reg)[操作步骤]q   <-操作结束  ("reg)为寄存器
+       2. @(reg) 宏操作
+       3. @@ 重复操作
+*** vim功能的详细了解。
+    1. 寄存器"{0, ", -, 1, :, /, #, %, +, ?, =, _, .}[pycd]
+    2. jumplist，quicklist，locallist, make, grep, vimgrep, complite。
+    3. 命令模式：正则表达式，range，global， normal，Substitute，argdo，bufdo。
+    4. 语法，补全，错误提示，定义跳转，关键字[查询，补全，统计]，缩写扩展,
+    5. @"reg运行寄存器中的宏, @@重复上次宏操作
+*** 过滤程序的使用
+*** 工具插件的使用
+    1. emmet 插件 为html、css提供快速编辑方式
+       1. C-y前缀,扩展 ;扩展最近一个元素 u更新属性 v_{内容}添加标签 
+       2. d选中外围标签 D选中内部下一个标签 n下一个未填写处 N上一个未填写处
+       3. i图片元素的大小属性 m选择行合并成为一行 k删除所在标签 j使标签成为一个
+       4. /添加注释 a使http:/网址锚信息 A详细网址锚信息 c使语言成为网站格式
+       5. >子项目 +同级别标签 ^上级标签 *个数 ()分组 []标签属性
+       6. .标签class #标签id $数字 {}标签内容 @[-][N]改变起始数字
+       7. |[estc]{escape single trim comentry}
+       8. 隐式展开通过父级元素
+         | Inserted element | Parent elements            |
+         |------------------+----------------------------|
+         | li               | ul, ol                     |
+         | tr               | table, tbody, thead, tfoot |
+         | td               | tr                         |
+         | option           | select, optgroup           |
+         | span             | Inline elements            |
+         | div              | Block elements             |
+         |------------------+----------------------------|
+       9. CSS
+    2. Tabularize 插件 一个通过正则表达式匹配作为分隔符的对齐插件
+       1. 根据分隔符来分隔字段（包括分隔符），去除字段两边（trim()）中的不可见字符
+          通过l{左对齐}，r{右对齐}，c{居中},后面的数字是当前字段后面的填充空格个数
+       2. 匹配一行并运行后会匹配上下行并运行
+       3. 再次在其他地方运行:Tab 会重复上次的匹配模式
+       4. 通过添加脚本multiple_spaces，可以更好对齐以空格为分隔符的行对齐
+       5. :Tab /pattern/(r1|l1|c1){num}  通过匹配分隔符 按照排列形式 重复num个循环一次
+    3. unimpaired 用方括号代替一些命令 []
+       1. 命令代替 a b l q t
+       2. [f 先于当前目录的文件，]f当前目录的文件，n {git diff}
+       3. 行操作 space{增加行} e{交换行}
+       4. 设置触发 [{on}  ]{off} ={toggle}  n w l...
+       5. [><=]{缩进}[pP]，y[oO]插入paste模式
+       6. x{html}, u{url}, y{c string}
+*** vimscript
+    let 
+**** 比较
+     (!=<>)[=][~][#?]
+**** 函数
+*** vim 每日学习需要注意事项
+    - 永远不要用 CTRL-C 代替 <ESC> 完全不同的含义，容易错误中断当前脚本
+    - 很多人使用 CTRL-[ 代替 <ESC>，左手小指 CTRL，右手小指 [ 熟练后很方便
+    - SecureCRT 中使用 Vim 8 内嵌终端如看到奇怪字符，使用 :set t_RS= t_SH= 解决
+    - SecureCRT 中使用 NeoVim 如看到奇怪字符，使用 :set guicursor= 解决
+    - * 和 # （以及 g*/g#）是十分重要的查找命令
+    - 多使用 ciw, ci[, ci", ci( 以及 diw, di[, di", di( 命令来快速改写/删除文本
+    - 使用 @: 重复执行上一次 Ex 命令，比如 :nohl<cr>, @:, @:, @:
+    - SHIFT 相当于移动加速键， w b e 移动光标很慢，但是 W B E 走的很快
+    - 自己要善于总结新技巧，比如移动到行首非空字符时用 0w 命令比 ^ 命令更容易输入
+    - 在空白行使用 dip 命令可以删除所有临近的空白行
+    - 在空白区使用 viw 可以选择所有空白字符
+    - 缩进时使用 >8j  >}  <ap  =i}  == 会方便很多
+    - 越重复的工作，越需要努力的将其自动化
+    - 编程时可以使用 [{ 和 ]} 快速在函数间移动
+    - 插入模式下，当你发现一个单词写错了，应该多用 CTRL-W 这比 <BackSpace> 快
+    - 插入模式下，CTRL-X CTRL-F 可以方便的补全当前目录的文件名
+    - 插入模式下，可用 CTRL-V u 输入 unicode，如 <C-V>u1234 输入16进制 unicoode
+    - 插入模式下，CTRL-R = 可以用来简单计算，比如 <C-R>=12*3.5/10<cr> 会插入 4.2
+    - 如果在插入模式下移动光标，那么就不能使用 . 来重复之前的插入了
+    - y d c 命令可以很好结合 f t 和 /X 比如 dt) 和 y/end<cr>
+    - c d x 命令会自动填充寄存器 "1 到 "9 , y 命令会自动填充 "0 寄存器
+    - 用 v 命令选择文本时，可以用 o 掉头选择，有时很有用
+    - ca) 和 yi} 很容易记忆，但是他们等同于 cab yiB 后者很容易输入
+    - 写文章时，可以写一段代码块，然后选中后执行 :!python 代码块就会被替换成结果
+    - 搜索后经常使用 :nohl 来消除高亮，使用很频繁，可以 map 到 <BackSpace> 上
+    - 搜索时可以用 CTRL-R CTRL-W 插入光标下的单词
+    - Vim 有一千零一种移动光标的方法，有时候就连 H M L 也是很有用的
+    - 不需要记忆上一次选择区域，'< 和 '> 可以跳到上次选择的开始和结束
+    - 如需编辑同一个文件的不同地方，可以用 :vs 或者 :split 将文件分为两个窗口
+    - 有六种方法来改变一个布尔设置: :set list nolist list! invlist list? list&
+    - 映射按键时，应该默认使用 noremap ，只有特别需要的时候使用 map
+    - 当你觉得做某事很低效时，你应该停下来，u u u u 然后思考正确的高效方式来完成
+    - 用 y复制文本后，命令模式中 CTRL-R 然后按双引号 " 可以插入之前复制内容
+    - 如果你想全屏阅读帮助的话，使用 :tab help <keyword> 命令
+    - 粘贴文本时应该思考下前后是否包含空格
+    - :x 和 ZZ 命令和 :wq 类似，但是不会写入没有改变的文件，并且更快
+    - 多阅读 :h index 学习新的快捷键，让你更加高效
+    - Vim 帮助系统里有一个使用技巧集合，使用 :h tips 阅读
+    - Windows 下的 GVim 可以用 CTRL-INSERT 和 SHIFT-INSERT 操作系统剪贴板
+    - 思考题：知道下面控制代码 ^I ^M ^J ^[ ^H ^@ 分别代表什么意思么？
+    - ^I tab, ^J^M \r\n CR（回车）和 LF（换行）, ^[ esc, ^@ NUl
+** TODO mysql
+*** 基本操作学习
+    1. mysql.server start/stop
+    2. mysql -u root -p -h localhost
+    3. show databases
+    4. show tables
+    5. describe / show columns from
+    6. show status
+    7. select [distinct] name ... from tables limit num, num;
+    8. offset / limit
+    9. order by
+    10. desc / asc
+    11. 过滤数据 where = <> != < <= > >=
+    12. between num and num, is null , and,  or
+    13. () [not] in (可以包含其他select 语句)
+    14. like (模糊搜索) %{任何字符任意次数} 不匹配NULL
+    15. _{匹配单个字符}
+*** regexp 正则表达式
+    1. [] [0-9] [123] [^12]
+    2. \\- \\. \\f \\n \\r \\t \\v 但MySQL要求两个反斜杠(MySQL 自己解释一个，正则表达式库解释另一个
+    3. 字符类别
+      | 类别       | 说明              |
+      |------------+-------------------|
+      | [:alnum:]  | 字母和数字        |
+      | [:alpha:]  | 字母              |
+      | [:blank:]  | 空格和制表        |
+      | [:cntrl:]  | 控制字符          |
+      | [:digit:]  | 数字              |
+      | [:graph:]  | 非空格空白字符    |
+      | [:lower:]  | 小写字母          |
+      | [:print:]  | 可打印字符        |
+      | [:punct:]  | 非 字母数字控字符 |
+      | [:space:]  | 空白字符          |
+      | [:upper:]  | 大写字母          |
+      | [:xdigit:] | 16进制数          |
+      | [:digit:]  | 10进制数          |
+    4. * + ? {n} {n, } {n,m}
+    5. ^ $  <:  :>: 匹配值 binary
+*** 函数 
+    1. Concat(), Trim(), as, + - * / Soundex(){发音模糊搜索} date()
+    2. 聚集函数 avg()  count() max() min() sum()  忽略null行
+       - distinct 不能用于计算或表达式
+*** 查改删增
+    1. 分组 group by  having with rollup{添加一条汇总信息}
+      select id, fun() as alias
+      from table1[, table2...]
+      where  [statment][like '%_'][regexp ' '][and][or]
+          [between and][in ()][is null][ innner  join  table on]
+      group by id, funtion()
+      having function [statment]
+      order by [num offset num][desc][with rollup][limit n,n];
+    2. 子查询 (select ...)
+    3. 将集聚函数作为查询参数
+       (select fun() from table where table.id = denpendTable.id) as
+       相当于一次循环，join
+    4. 笛卡尔积{全部可能性, n:table1, m:table2 nxm} where 默认条件
+    5. 表别名 as，自连接inner join  on，自然联结 select *，外部联结（left/right outer join）
+    6. union union all
+*** 数据类型
+    1. 整型
+       1. tinyInt{8位},
+       2. smallInt{16位},
+       3. meduimInt{24位},
+       4. int{32位},
+       5. bigInt{64位}
+    2. 其他
+       1. bool {boolean}
+       2. dec {decimal(m, n)可变浮点数}
+       3. float
+       4. double
+       5. real {4字节浮点数}
+    3. 字符类型
+       1. char
+       2. varchar {0, 255}
+       3. enum {64k个串}
+       4. set {64个串}
+       5. longtext {4G}
+       6. text {64k}
+       7. mediumText {16k}
+       8. tinyText {255}
+     
+*** 表的创建，权限，索引，视图
+*** 存储过程，游标，触发器
+*** 管理维护
+*** 性能了解
+** TODO mongo
+** TODO html5
+   1. form: input[text|password|radio|checkbox{select}]
+** TODO css3
+   1. 入门
+      1. 元素 document 标签 font-family font-size font-weight font- color text-decoration
+** TODO Javascript
+   1. 历史及工具使用
+      npm install -g es-checker 检测 node 对 javascript 支持的程度
+      Babel 转码器 ES6 =› ES5 npm install -g babel-cli, Traceur
+      eslint 语法检测
+   2. var function import let const class
+      1. 函数表达式 f = fun；do 表达式；大括号 与let有关
+      2. const =› 指向a变量的方向 不可变
+      3. 浏览环境 windows  Node global
+   3. let [a, b, c] = [1, 2, 3]; [x = f()] = [1] 函数不运行
+   4. 字符串的扩展
+      两个字节以上\u{}
+      codePointAt()最大4个字节的值  String.fromCodePoint()返回最大4个字节字符  
+      charCodeAt()最大2个字节的值   String.fromCharCode()返回最大2个字节字符  
+      charAt()最大两个字节字符  at()?
+      for  ...of 识别多字节字符 
+      语义上的等价normalize() nfc nfd nfkc nfkd 
+      返回布尔值includes() endsWith() startsWith()
+      repeat()重复次数 pad[(Start|End)](length, string)
+      '09-12'.padStart(10, 'YYYY-MM-DD') // "YYYY-09-12"
+      `${}`.trim() 模板 类似bash
+   5. 正则
+      new RegExp(/abc/ig, 'i').flags
+      match()、replace()、search()、split()
+      /u最大4个字符 ./u {}/u {num}/u 量词 i字形相近
+      g y r.exec(string) r.lastIndex
+      sticky
+      r.(source|flags)
+      /s 使.可以匹配任意单个字符 dotAll
+      (?= ) (?! ) (?<= ) (?<! )
+      \[pP] /u
+   6. 数据类型和变量 字符串 数组 对象
+   7. 数值
+      0b 0o 0x
+      Number isFinite() isNaN() parseInt() parseFloat() isInteger() Number.EPSILON.toFixed();
+      Math sinh(x) conh(x) tanh(x) asinh(x) acosh(x) atanh(x)  **
+   8. 函数
+      ...rest =>
+   9. 数组
+      ...
+      Array.from() 转化成数组 map
+      Array.of() 值转化成数组
+   10. 数据集合 value done
+       1. Array
+       2. Object
+       3. Map
+       4. Set
+   11. 条件判断
+   12. 循环
+   13. 函数 
+       map reduce filter sort
+** TODO node, npm基础知识学习
+** TODO Git
+** TODO docker使用
+*** 生命周期使用
+** TODO c语言学习笔记
+*** 最小值补码的反码是其本身 Tmin = -Tmin
+*** 隐式类型转
+** TODO 开源软件项目
+*** 输入法 https://github.com/rime/librime
+*** 全局键位设置
+*** 视频播放器
+** 架构
+*** egg
+*** express
+** 网络基础概念
+** 深入理解计算机了解
+** 算法
+** tcp/ip、http2知识了解
+** eslint
+* 语言
+** 英语学习
+** 日语学习
+* 家庭生活篇
+** 冰箱使用
+*** 冰箱配件
+    1. 保鲜盒。食物分门别类存储
+    2. 保鲜袋。蔬菜等
+    3. 保险膜。剩菜剩饭
+    4. 其他类别工具，外部工具
+*** 冷藏室的使用
+    1. 按照生熟分开、分类存放。生下熟上
+    2. 按照温度分区。
+       1. 蔬菜、水果怕冷，
+       2. 豆制品、剩菜饭里面，
+       3. 马上吃掉的食品鸡蛋、奶酪、饮料、调味品。
+*** 冷冻
+    1. 调低温度-18度
+    2. 肉类，鱼类，雪糕棒冰等分割成一小块方便一次性使用。
+    3. 茶叶用保鲜袋，馒头等淀粉类食物，豆类和水果干用保鲜袋
+    4. 生熟分开，分层储藏。生鱼、生肉、海鲜类、豆腐在最下。淀粉类放上层。速冻食品。
+*** 不能放入冰箱的食品
+    1. 热带水果。香蕉、芒果、荔枝、火龙果。放在阴凉处即可。
+    2. 肉类腌制品。腊肠、火腿等。
+    3. 巧克力。
+    4. 鸡蛋。看温度情况决定。
+    5. 面包。不该冷藏可以冷冻。
+    6. 部分蔬菜。西红柿、土豆、红薯、洋葱、大蒜、黄瓜、青椒。
+    7. 常温牛奶等。
+*** 食品保质时间
+    1. 绿叶蔬菜 3天时间
+*** 定期清理冰箱卫生
+* 健身篇
+** 时间 七点后开始 十点后睡 早上四点起床
+** 跑步🏃
+** 俯卧撑
+** 游泳
+** 自行车
+** 旅游
+* 问题汇总
+** spaceemacs
+*** 命令模式中的正则表达式和vim有什么不同？
+** 设想问题
+** <2017-07-13 Thu>mysql函数如何查询
+** <2017-07-14 Fri>having count(*) 没有匹配的
+** <2017-08-23 Wed> 路由器内的局域网速率
+** <2017-08-24 Thu> 如何测试语言性能 vim分屏线
+** <2017-08-27 Sun> cd ${var} 不能运行？
+* 问题
+** <2017-08-10 Thu> 卫生，backtohome
+** <2017-08-17 Thu> 经济时速 2.0t 90-120
+** <2017-08-18 Fri> 性能测试
+** <2017-08-19 Sat> 健康知识
+** 英语 document review 数学 算法 语文 docu 物理 动手能力
+** 原生具备 Iterator 接口的数据结构如下。
+    Array
+    Map
+    Set
+    String
+    TypedArray
+    函数的 arguments 对象
+    NodeList 对象
+** <2017-09-19 Tue> git workflow
+** <2017-09-25 Mon> 早上起床锻炼
+** <2017-09-28 Thu> restful
+** <2017-09-29 Fri> 新建用户终端用vim中文乱码，学习东西规律性总结，webp
+** brew reinstall vim --with-python3 --without-python  --With-client-server
+** ubuntu使用需要 curl、sudo apt install、dpkg -i、openssh-server、
+* 工作任务及问题提醒
+** 邮件急时查看
+** 微信信息查看
