@@ -28,3 +28,7 @@ a => b
 > 匹配多个模块
 
 :g/{start} .,{finsh} norm
+
+5. 文件
+
+设置 path 使用 find 查询文件
