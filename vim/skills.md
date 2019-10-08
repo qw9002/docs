@@ -1,3 +1,7 @@
+tips
+====
+
+
 > 删除可执行文件
 > 因为 find 不能通过 -type 选项来确认可执行文件
 find . -perm 755 -a -type f -exec rm {} \;
