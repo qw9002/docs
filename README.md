@@ -1,6 +1,23 @@
 todo list
 ---------
 
+<!-- vim-markdown-toc GFM -->
+
+* [语言](#语言)
+    * [nodejs](#nodejs)
+        * [nodejs 库](#nodejs-库)
+        * [`typescript` 的使用](#typescript-的使用)
+    * [vim 使用技巧](#vim-使用技巧)
+        * [snippet 学习使用](#snippet-学习使用)
+        * [脚本学习](#脚本学习)
+    * [Linux](#linux)
+* [书籍](#书籍)
+    * [你所不知道的 `javascript` 的学习](#你所不知道的-javascript-的学习)
+    * [深入理解计算机系统](#深入理解计算机系统)
+
+<!-- vim-markdown-toc -->
+
+# 语言
 
 ## nodejs
 
