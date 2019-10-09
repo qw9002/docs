@@ -65,10 +65,7 @@ todo list
 在项目目录下创建 `package.json` 文件, 通过 `yarn init` or `npm init`
 
 ```bash
-yarn add --registry=https://registry.npm.taobao.org --dev
-@typescript-eslint/parser
-@typescript-eslint/eslint-plugin
-@typescript-eslint/typescript-estree
+yarn add --registry=https://registry.npm.taobao.org --dev @typescript-eslint/parser @typescript-eslint/eslint-plugin @typescript-eslint/typescript-estree
 ```
 
 [为什么使用这三个包](https://github.com/typescript-eslint/typescript-eslint#how-do-i-configure-my-project-to-use-typescript-eslint)
