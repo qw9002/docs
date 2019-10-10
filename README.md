@@ -121,6 +121,9 @@ module.exports = {
 
 ```
 
+3. export、import、export default
+
+[import](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Statements/import)
 
 [文件地址](./typescript.md)
 
