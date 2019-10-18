@@ -3,6 +3,7 @@ todo list
 
 <!-- vim-markdown-toc GFM -->
 
+* [TODO list](#todo-list)
 * [语言](#语言)
     * [nodejs](#nodejs)
         * [nodejs 库](#nodejs-库)
@@ -16,6 +17,13 @@ todo list
     * [深入理解计算机系统](#深入理解计算机系统)
 
 <!-- vim-markdown-toc -->
+
+# TODO list
+
+[ ] node 内存使用情况
+ https://cnodejs.org/topic/58eb5d378cda07442731569f
+ https://cnodejs.org/topic/58c78ad906dbd608756d0d58
+ https://imweb.io/topic/57cc5a75802d795b425977aa
 
 # 语言
 
