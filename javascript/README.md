@@ -23,4 +23,4 @@ javascript
 ## Promise
 
 推荐文章:
-工业聚: [Promise](https://zhuanlan.zhihu.com/p/83965949)
+工业聚: [Promises/A+ 规范](https://zhuanlan.zhihu.com/p/83965949)
