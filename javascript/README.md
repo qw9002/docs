@@ -9,8 +9,10 @@ javascript
 
 ## 原型
 
-[prototype](https://zhuanlan.zhihu.com/p/87667349)
+推荐文章:
+工业聚: [深入理解 JavaScript 原型](https://zhuanlan.zhihu.com/p/87667349)
 
 ## Promise
 
-[Promise](https://zhuanlan.zhihu.com/p/83965949)
+推荐文章:
+工业聚: [Promise](https://zhuanlan.zhihu.com/p/83965949)
