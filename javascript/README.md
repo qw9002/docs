@@ -1,6 +1,14 @@
 javascript
 ----------
 
+<!-- vim-markdown-toc GFM -->
+
+* [编译原理](#编译原理)
+* [原型](#原型)
+* [Promise](#promise)
+
+<!-- vim-markdown-toc -->
+
 ## 编译原理
 
 1. 分词/词法分析 (tokenizing/lexing)
