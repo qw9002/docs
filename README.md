@@ -27,7 +27,7 @@ todo list
 
 ## nodejs
 
-- TODO [ ] [javascript](./javascript/README.md) 基础
+- [ ] TODO [javascript](./javascript/README.md) 基础
 - [ ] js单线程，Node多线程执行
 - [ ] 事件循环介绍
 - [ ] Promise在事件循环哪个环节
@@ -59,7 +59,7 @@ todo list
 
 ### nodejs 库
 
-- TODO [ ] [koa](./koa/README.md)
+- [ ] TODO [koa](./koa/README.md)
 - [ ] sequelize
 - [ ] egg
 
