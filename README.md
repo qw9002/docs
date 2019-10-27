@@ -13,8 +13,6 @@ todo list
         * [脚本学习](#脚本学习)
     * [Linux](#linux)
 * [书籍](#书籍)
-    * [你所不知道的 `javascript` 的学习](#你所不知道的-javascript-的学习)
-    * [深入理解计算机系统](#深入理解计算机系统)
 
 <!-- vim-markdown-toc -->
 
@@ -29,6 +27,7 @@ todo list
 
 ## nodejs
 
+- TODO [ ] [javascript](./javascript/README.md) 基础
 - [ ] js单线程，Node多线程执行
 - [ ] 事件循环介绍
 - [ ] Promise在事件循环哪个环节
@@ -60,7 +59,7 @@ todo list
 
 ### nodejs 库
 
-- [ ] koa
+- TODO [ ] [koa](./koa/README.md)
 - [ ] sequelize
 - [ ] egg
 
@@ -162,10 +161,11 @@ module.exports = {
 
 # 书籍
 
-## 你所不知道的 `javascript` 的学习
+- [ ] 你所不知道的 `javascript` 的学习
+- [ ] 编译原理
 
 
-## 深入理解计算机系统
+- [ ] 深入理解计算机系统
 
 ```
 2~3章：
