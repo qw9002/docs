@@ -18,9 +18,11 @@ javascript
 ## 原型
 
 推荐文章:
+
 工业聚: [深入理解 JavaScript 原型](https://zhuanlan.zhihu.com/p/87667349)
 
 ## Promise
 
 推荐文章:
+
 工业聚: [Promises/A+ 规范](https://zhuanlan.zhihu.com/p/83965949)
