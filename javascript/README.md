@@ -5,6 +5,7 @@ javascript
 
 * [编译原理](#编译原理)
 * [函数](#函数)
+* [this 的使用](#this-的使用)
 * [原型](#原型)
 * [Promise](#promise)
 
@@ -19,6 +20,12 @@ javascript
 ## 函数
 
 [MDN: 箭头函数](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+## this 的使用
+
+FunDebug:
+
+[JavaScript深入浅出第1课：箭头函数中的this究竟是什么鬼？](https://blog.fundebug.com/2019/06/18/arrow-function-this/)
 
 ## 原型
 
