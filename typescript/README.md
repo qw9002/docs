@@ -17,7 +17,7 @@ typescript
 ## 项目创建
 
 1. 创建项目目录: mkdir project && cd project
-2. 通过 `yarn init` 或 `npm init` 初始化, 生成 `package.json` 文件, 
+2. 通过 `yarn init` 或 `npm init` 初始化, 生成 `package.json` 文件,
 3. 添加语法检测库及局和模块类型定义包
 
 [为什么使用这三个包](https://github.com/typescript-eslint/typescript-eslint#how-do-i-configure-my-project-to-use-typescript-eslint)
